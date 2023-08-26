@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		img{
+			height: 195px;
+			width: 490px;
+			margin-top:1px;
+			margin-left:5px;
+		} 
+	</style>
+</head>
+<body><center>
+	<div style="height: 600px; width: 900px; background-color: black; margin-top: 70px; margin-left: 60px; border: 10px solid black;"> 
+		<div id="leftDivision" style="height: 600px; width:500px; background-color: white; float: left;">
+			<img src="pics/4.png" onclick="displayImage('pics/4.png')">
+			<img src="pics/5.png" onclick="displayImage('pics/5.png')">
+			<img src="pics/6.png" onclick="displayImage('pics/6.png')">
+		</div>
+		<div style="height: 600px; width:10px; background-color: black; float:left;"></div>
+		<div id="rightDivision" style="height: 600px; width: 390px; background-color: white; float: right;">
+			<!-- <img src="22-23 Placements.jpg">
+			<img src="117.jpg"> -->
+		</div>
+	</div>
+</center>
+	<script type="text/javascript">
+		function displayImage(imageSrc) {
+			const rightDivision = document.getElementById("rightDivision");
+			rightDivision.innerHTML = `<img src="${imageSrc}" style="margin-top:200px; width:350px; max-height: 100%;
+			margin-left:5px;">`;
+		}
+	</script>
+</body>
+</html>

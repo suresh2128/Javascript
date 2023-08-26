@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slideshow</title>
+  <style>
+    /* Optional: Add some basic styles to center the image and buttons on the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width:auto; /* Set the width of the container according to your image size */
+    }
+    .slideshow-image {
+      width: 100%;
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 16px;
+      background-color: #f2f2f2;
+      border: none;
+      user-select: none;
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+    img{
+      height:400px;
+      width:800px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a container for the slideshow -->
+  <div class="slideshow-container">
+    <!-- You can add more images or adjust the image paths as needed -->
+    <img class="slideshow-image" src="pics/22-23 Placements.jpg" alt="Slideshow Image 1">
+    <img class="slideshow-image" src="pics/117.jpg" alt="Slideshow Image 2">
+    <img class="slideshow-image" src="pics/180 Acre1.jpg" alt="Slideshow Image 3">
+    <img class="slideshow-image" src="pics/course.jpg" alt="Slideshow Image 4">
+    <!-- Add more images here up to image10.jpg -->
+    
+    <!-- Manual navigation buttons -->
+    <button class="prev" onclick="plusSlides(-1)"><</button>
+    <button class="next" onclick="plusSlides(1)">></button>
+  </div>
+
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    var slides = document.getElementsByClassName("slideshow-image");
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  // Automatically advance the slides every 3 seconds
+  setInterval(function() {
+    plusSlides(1);
+  }, 2500); // Change this value to adjust the interval (in milliseconds)
+</script>
+</body>
+</html>

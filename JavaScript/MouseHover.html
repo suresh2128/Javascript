@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Example</title>
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .hover-image {
+            opacity: 1;
+        }
+        .s1{
+           position:relative;
+           right:20px;
+           width:250px;
+            height:250px;
+        }
+        img{
+            width:250px;
+            height:250px;
+        }
+    </style>
+</head>
+<body><center>
+    <div class="image-container">
+        <img src="pics/sad.jpg" alt="Original Image" class="s1">
+        <img class="hover-image" src="pics/smile.png" alt="Hover Image">
+    </div></center>
+
+    <script>
+    const originalImage = new Image();
+    originalImage.src = 'pics/sad.jpg';
+
+    const hoverImage = new Image();
+    hoverImage.src = 'pics/smile.png';
+
+    const imageContainer = document.querySelector('.image-container');
+    const hoverImageElement = document.querySelector('.hover-image');
+
+    imageContainer.addEventListener('mouseover', () => {
+        hoverImageElement.src = hoverImage.src;
+    });
+
+    imageContainer.addEventListener('mouseout', () => {
+        hoverImageElement.src = originalImage.src;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		button{
+			background-color:orange;
+			border-radius:3px;
+			margin-left:10px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<button onclick="s1()">Next</button>
+	<button onclick="s2()">Previous</button>
+	<p id="u">
+		<img src="1.jpeg">
+	</p>
+	</center>
+	<script type="text/javascript">
+		var i=1;
+		function s1()
+		{
+			if (i<3){
+			var q=++i
+			document.getElementById('u').innerHTML="<img src='"+q+".jpeg'/>";
+		}
+		}
+		var i=0;
+		function s2()
+		{
+			if (i>1){
+			var w=--i
+			document.getElementById('u').innerHTML="<img src='"+w+".jpeg'/>";
+		}
+		}
+	</script>
+</body>
+</html>

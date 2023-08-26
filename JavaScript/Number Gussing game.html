@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Guessing Game</title>
+  <style>
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<center>
+<h1>Number Guessing Game</h1>
+<p>Try to guess the correct number from the available options:</p>
+
+<form id="guessForm">
+  <input type="radio" name="guess" value="1"> 1
+  <input type="radio" name="guess" value="2"> 2
+  <input type="radio" name="guess" value="3"> 3
+  <input type="radio" name="guess" value="4"> 4
+  <input type="radio" name="guess" value="5"> 5
+  <br><br>
+  <input type="button" value="Submit Guess" onclick="checkGuess()">
+</form>
+<div id="output"></div>
+</center>
+<script>
+const targetNumber = Math.floor(Math.random() * 5) + 1;
+function checkGuess() {
+  const selectedRadio = document.querySelector('input[name="guess"]:checked');
+  const outputDiv = document.getElementById("output");
+
+  if (selectedRadio) {
+    const userGuess = parseInt(selectedRadio.value);
+
+    if (userGuess === targetNumber) {
+      outputDiv.innerHTML = `Congratulations! You guessed the correct number ${targetNumber}!`;
+    } else {
+      outputDiv.innerHTML = `Sorry, the correct number was ${targetNumber}. Try again!`;
+    }
+  } else {
+    outputDiv.innerHTML = "Please select a guess before submitting.";
+  }
+}
+</script>
+
+</body>
+</html>
